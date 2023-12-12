@@ -1,0 +1,13 @@
+.CartWidget {
+    display: flex;
+}
+
+.button-carrito {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.button-carrito span {
+    font-weight: 700;
+}

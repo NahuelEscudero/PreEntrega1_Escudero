@@ -1,20 +1,22 @@
 /* eslint-disable react/prop-types */
+
+//ESTILOS
 import "./Header.css";
 
+//COMPONENTES
+import NavBar from "../NavBar/NavBar.jsx";
+
 //IMAGENES
-import img from "../../assets/logo.png";
+import img from "../../assets/images/logotipos/LOGO NEGRO.png";
 
 const Header = (props) => {
   return (
-    <div 
-      className="Header" 
-      style={{
+    <div className="Header" style={{
         backgroundColor: props.bgColor,
         border: `10px solid ${props.borderColor}`
       }}>
-      <img src={img} alt="logo" />
-      <h1>{props.title}</h1>
-      <h2>Subtitulo</h2>
+      <img className="logotype-princ" src={img} alt="logo" />
+      <NavBar />
     </div>
   );
 };

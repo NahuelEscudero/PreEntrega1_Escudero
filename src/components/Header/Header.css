@@ -5,8 +5,9 @@
     align-items: center;
     background-color: darkcyan;
     width: 100%;
-    min-height: 30vh;
+    height: 30vh;
     border: 10px solid yellow;
+    gap: 20px;
 }
 
 .Header h1, h2 {

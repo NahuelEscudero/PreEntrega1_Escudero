@@ -5,22 +5,22 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-const UserCard = (props) => {
+const UserCard = ({ img, name, born }) => {
   return (
-    <Card sx={{ width: 200 }}>
+    <Card sx={{ width: 150 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image={props.img}
+          image={img}
           alt="Usuario"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {props.name}
+            {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {props.born}
+            {born}
           </Typography>
         </CardContent>
       </CardActionArea>

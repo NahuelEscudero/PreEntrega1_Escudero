@@ -1,0 +1,18 @@
+.NavBar {
+    width: 100%;
+}
+
+.NavBar ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 100%;
+    justify-content: space-around;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+li > a {
+    text-decoration: none;
+}
