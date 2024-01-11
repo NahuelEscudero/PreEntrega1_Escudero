@@ -1,5 +1,5 @@
 .NavBar {
-    width: 100%;
+    width: 80%;
 }
 
 .NavBar ul{
@@ -13,6 +13,7 @@
     font-size: 1.3rem;
 }
 
-li > a {
+.navbar-links {
+    color: #FFFFFF;
     text-decoration: none;
 }

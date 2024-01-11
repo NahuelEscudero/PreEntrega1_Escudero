@@ -1,11 +1,15 @@
+/* eslint-disable react/prop-types */
+import "./ItemListContainer.css";
+import ItemList from "../ItemList/ItemList.jsx"
+import getProducts from "../../../productos.json"
 
-const ItemListContainer = () => {
-  return (
-    <div style={{ backgroundColor:"red", fontSize: "2rem", fontFamily: 'Montserrat, sans-serif', padding:"10px"}}>
-        ¡Bienvenidos a INSIDIA.IND!
-        Lamentamos decirte que la página aún esta en desarrollo
-    </div>
-  );
-};
-
-export default ItemListContainer;
+const ItemListContainer = ( {saludo} ) => {
+    return (
+      <>
+        <div className="greeting">{saludo}</div>
+        <ItemList items={getProducts}/>
+      </>
+    );
+  };
+  
+  export default ItemListContainer;

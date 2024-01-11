@@ -8,8 +8,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const CartWidget = () => {
   return (
     <button className='button-carrito'>
-        <ShoppingCartIcon />
-        <span>0</span>
+        <ShoppingCartIcon sx={{ color: `#FFFFFF` }}/>
+        <span style={{ color: '#FFFFFF' }}>0</span>
     </button>
   );
 };

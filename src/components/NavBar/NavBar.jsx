@@ -8,9 +8,9 @@ const NavBar = () => {
   return (
     <nav className="NavBar">
         <ul>
-            <li><a href="#">COLECCION</a></li>
-            <li><a href="#">NOSOTROS</a></li>
-            <li><a href="#">LOCALES</a></li>
+            <li><a className="navbar-links" href="#">COLECCION</a></li>
+            <li><a className="navbar-links" href="#">NOSOTROS</a></li>
+            <li><a className="navbar-links" href="#">LOCALES</a></li>
             <li>
               <CartWidget />
             </li>
