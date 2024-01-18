@@ -1,3 +1,6 @@
+//NAVEGABILIDAD
+import { Link } from "react-router-dom"
+
 //ESTILOS
 import "./NavBar.css";
 
@@ -8,12 +11,12 @@ const NavBar = () => {
   return (
     <nav className="NavBar">
         <ul>
-            <li><a className="navbar-links" href="#">COLECCION</a></li>
-            <li><a className="navbar-links" href="#">NOSOTROS</a></li>
-            <li><a className="navbar-links" href="#">LOCALES</a></li>
-            <li>
-              <CartWidget />
-            </li>
+          <Link to="/coleccion" className="navbar-links">COLECCION</Link>
+          <Link to="/nosotros" className="navbar-links">NOSOTROS</Link>
+          <Link to="/locales" className="navbar-links">LOCALES</Link>
+          <li>
+            <CartWidget />
+          </li>
         </ul>
     </nav>
   )

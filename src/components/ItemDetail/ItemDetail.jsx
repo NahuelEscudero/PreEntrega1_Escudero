@@ -1,29 +1,33 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
-import { useEffect } from "react"
-import Swal from 'sweetalert2'
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 
 const ItemDetail = ( {product} ) => {
-    return(
-        Swal.fire({
-            title: `Desea agregar ${product.nombre} al carrito?`,
-            text: `Total: ${product.precio}`,
-            imageUrl: `${product.imagen}`,
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Agregar al carrito"
-          })
-          .then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire({
-                title: "Agregado exitosamente!",
-                text: `${product.nombre} agregado exitosamente al carrito`,
-                icon: "success"
-              });
-            }
-          })
-    );
+  const [ nombre, imagen, precio ] = product;
+
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardActionArea>
+        <CardMedia
+          component="img"
+          height="140"
+          image={imagen}
+          alt={`green iguana ${nombre}`}
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            {nombre}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {`Precio: ${precio}`}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
 }
 
 export default ItemDetail;

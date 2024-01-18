@@ -6,7 +6,9 @@ const ItemList = ( {items} ) => {
   return (
     <div className="cards-container">
       {items.map(item => (
-        <Item key={item.id} nombre={item.nombre} imagen={item.imagen} precio={item.precio} />
+        <div key={item.id}>
+          <Item product={item} />
+        </div>
       ))}
     </div>
   );

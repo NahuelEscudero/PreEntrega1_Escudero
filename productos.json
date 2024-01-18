@@ -1,30 +1,36 @@
 [
     {
+        "id": 1,
         "nombre": "REMERA EFECTO INVERNADERO",
         "imagen": "./src/assets/images/productos/remeras/REMERA EFECTO INVERNADERO [ NEVADO ].png",
         "precio": 20
     },
     {
+        "id": 2,
         "nombre": "REMERA ENERGIAS RENOVABLES",
         "imagen": "./src/assets/images/productos/remeras/REMERA ENERGÍAS RENOVABLES [ NEGRO ].png",
         "precio": 15
     },
     {
+        "id": 3,
         "nombre": "REMERA SUNWAVES [ LS08 ]",
         "imagen": "./src/assets/images/productos/remeras/REMERA SUNWAVES [ LS08 ].png",
         "precio": 22
     },
     {
+        "id": 4,
         "nombre": "REMERA SUNWAVES [ LS15 ]",
         "imagen": "./src/assets/images/productos/remeras/REMERA SUNWAVES [ LS15 ].png",
         "precio": 20
     },
     {
+        "id": 5,
         "nombre": "REMERON MEGA [ GRIS ]",
         "imagen": "./src/assets/images/productos/remeras/REMERON MEGA [ GRIS ].png",
         "precio": 17
     },
     {
+        "id": 6,
         "nombre": "REMERON MEGA [ NEGRO ]",
         "imagen": "./src/assets/images/productos/remeras/REMERON MEGA [ NEGRO ].png",
         "precio": 17

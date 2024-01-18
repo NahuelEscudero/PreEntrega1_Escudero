@@ -1,19 +1,24 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+//COMPONENTES
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
-import getProducts from "../../../asyncMock.jsx";
 
-const ItemDetailContainer = ( {id} ) => {
-  /*const [ button, setButton ] = useState(false);*/
-  const products = getProducts;   
-  const product = products.find((product) => product.id === id);
-  
+//OBTENGO PRODUCTOS
+import getProducts from "../../../asyncMock.jsx"
+
+//HOOKS
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+
+const ItemDetailContainer = (ident) => {
+  let { id } = useParams();
+
+  const products = getProducts();
+  const findProduct = products.find((item) => item.id === id);
+
   return (
-    <div>
-        <ItemDetail product/>
-    </div>
-  )
+    findProduct && <ItemDetail product={findProduct} />
+  );
 }
 
 export default ItemDetailContainer;

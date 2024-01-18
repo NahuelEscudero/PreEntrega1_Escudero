@@ -36,7 +36,7 @@ p.product-card-add__precio {
   text-align: center;
 }
 
-button.product-card-add__button {
+.product-card-add__button {
   width: auto;
   all: initial;
   background-color: #5B5A5B;
@@ -46,6 +46,9 @@ button.product-card-add__button {
   border-bottom-right-radius: 13px;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img.product-card-add__button-img-white {
@@ -57,16 +60,16 @@ img.product-card-add__button-img-black {
   width: 30px;
 }
 
-button.product-card-add__button:hover {
+.product-card-add__button:hover {
   background-color: #F6F3F9;
 }
 
-button.product-card-add__button:hover img.product-card-add__button-img-white {
+.product-card-add__button:hover img.product-card-add__button-img-white {
   display: none;
   width: 30px;
 }
 
-button.product-card-add__button:hover img.product-card-add__button-img-black {
+.product-card-add__button:hover img.product-card-add__button-img-black {
   display: initial;
   justify-self: center;
 }

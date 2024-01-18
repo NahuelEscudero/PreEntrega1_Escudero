@@ -1,42 +1,34 @@
-import { useState } from "react";
+//ESTILOS
 import "./App.css";
+
+//NAVEGABILIDAD
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 //COMPONENTS
 import Header from "./components/Header/Header";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 
+//PAGINAS
+import HomePage from "./pages/HomePage/HomePage"
+import DetailProduct from "./pages/DetailProduct/DetailProduct";
+import Nosotros from "./pages/Nosotros/Nosotros";
+import Coleccion from "./pages/Coleccion/Coleccion";
+import LocalesMap from "./pages/LocalesMap/LocalesMap"
 
 const App = () => {
-  
-  const [ counter, setCounter ] = useState(0); 
 
-  const handlerCounterUp = () => {
-    setCounter( counter + 1 );
-  };
-
-  const handlerCounterDown = () => {
-    setCounter( counter - 1 );
-  };
-
-  
   return (
-    <>
-     <div className="App">
-       <Header />
-       <ItemListContainer saludo="BIENVENIDOS A INSIDIA INDUMENTARIA"/>
-       {/*<ItemDetailContainer />*/}
-       <div className="CounterSection">
-         <div className="btn-section">
-           <button className="btn" onClick={handlerCounterDown}>Restar</button>
-         </div>
-         Counter: {counter}
-         <div className="btn-section">
-           <button className="btn" onClick={handlerCounterUp}>Sumar</button>
-         </div>
-       </div>
-     </div>
-    </>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={ <HomePage /> }></Route>
+          <Route path="/coleccion" element={ <Coleccion /> }></Route>
+          <Route path="/locales" element={ <LocalesMap /> }></Route>
+          <Route path="/nosotros" element={ <Nosotros /> }></Route>
+          <Route path="/detailproduct/:id" element={ <DetailProduct /> }></Route>
+        </Routes>
+      </div>
+    </Router>
   );
   
 }
