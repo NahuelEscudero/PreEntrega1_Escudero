@@ -4,15 +4,8 @@
 //ESTILOS
 import "./Item.css";
 
-//COMPONENTES
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer.jsx";
-
-//HOOKS
-import { useEffect, useState } from "react";
-
 //NAVEGABILIDAD
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom"; 
 
 
 const valorDolar = 1025;

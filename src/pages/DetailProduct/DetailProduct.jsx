@@ -1,15 +1,17 @@
+//HOOKS
 import { useParams } from "react-router-dom"
+
+//COMPONENTES
 import ItemDetailContainer from "../../components/ItemDetailContainer/ItemDetailContainer"
+
 
 const DetailProduct = () => {
   let { id } = useParams();
-
-  console.log(id);
+  const ident = parseInt(id);
 
   return (
     <div>
-      <h3>Hola Mundo</h3>
-      <ItemDetailContainer />
+      <ItemDetailContainer ident={ident}/>
     </div>
   )
 }

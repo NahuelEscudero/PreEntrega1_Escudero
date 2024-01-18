@@ -6,7 +6,8 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 const ItemDetail = ( {product} ) => {
-  const [ nombre, imagen, precio ] = product;
+  const { nombre, imagen, precio } = product;
+  const valorDolar = 1025;
 
   return (
     <Card sx={{ maxWidth: 345 }}>
@@ -15,14 +16,14 @@ const ItemDetail = ( {product} ) => {
           component="img"
           height="140"
           image={imagen}
-          alt={`green iguana ${nombre}`}
+          alt={`Remera: ${nombre}`}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {nombre}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {`Precio: ${precio}`}
+            {`Precio: ${precio * valorDolar}`}
           </Typography>
         </CardContent>
       </CardActionArea>

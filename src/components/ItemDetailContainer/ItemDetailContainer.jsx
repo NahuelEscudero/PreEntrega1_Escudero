@@ -4,20 +4,24 @@
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
 
 //OBTENGO PRODUCTOS
-import getProducts from "../../../asyncMock.jsx"
+import products from "../../../productos.json";
 
 //HOOKS
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-const ItemDetailContainer = (ident) => {
-  let { id } = useParams();
-
-  const products = getProducts();
-  const findProduct = products.find((item) => item.id === id);
-
+const ItemDetailContainer = ( {ident} ) => {
+  const [ prod, setProd ] = useState({});
+  
+  useEffect(() => {
+    setProd(products.find((item) => {
+      return item.id === ident;
+    }));
+  }, []); 
+  
   return (
-    findProduct && <ItemDetail product={findProduct} />
+    <div>
+      <ItemDetail product={prod} />
+    </div>
   );
 }
 
