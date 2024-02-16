@@ -1,15 +1,39 @@
 /* eslint-disable react/prop-types */
-import "./ItemListContainer.css";
-import ItemList from "../ItemList/ItemList.jsx"
-import getProducts from "../../../asyncMock.jsx"
+//ESTILOS
+import "./ItemListContainer.css"
 
-const ItemListContainer = ( {saludo} ) => {
+//HOOKS
+import { useEffect, useState } from "react";
+
+//COMPONENTES
+import ItemList from "../ItemList/ItemList.jsx";
+
+//PRODUCTOS
+import getProducts from "../../../asyncMock.jsx";
+
+
+const ItemListContainer = ({ saludo }) => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const productsData = await getProducts();
+        setProducts(productsData);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
   return (
     <>
       <div className="greeting">{saludo}</div>
-      <ItemList items={getProducts()}/>
+      <ItemList items={products} />
     </>
   );
 };
-  
+
 export default ItemListContainer;

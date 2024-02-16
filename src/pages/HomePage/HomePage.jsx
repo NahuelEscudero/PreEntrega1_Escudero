@@ -1,12 +1,36 @@
+//ESTILOS
+import "./HomePage.css"
 
-import ItemListContainer from "../../components/ItemListContainer/ItemListContainer";
+//HOOKS
+import { useState, useEffect } from "react";
+
+//COMPONENTES
+import Spinner from "../../components/Spinner/Spinner.jsx"
+import ItemListContainer from "../../components/ItemListContainer/ItemListContainer.jsx";
+
+//PRODUCTOS
+import getProducts from "../../../asyncMock.jsx";
+
 
 const HomePage = () => {
-  return (
-    <div>
-        <ItemListContainer saludo="BIENVENIDOS A INSIDIA INDUMENTARIA"/>
-    </div>
-  )
-}
+  const [isLoading, setIsLoading] = useState(true);
 
-export default HomePage
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        await getProducts();
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+
+  return (isLoading ? <div className="cont-spinner"><Spinner /></div> : <ItemListContainer saludo="BIENVENIDOS A INSIDIA INDUMENTARIA" />);
+};
+
+export default HomePage;

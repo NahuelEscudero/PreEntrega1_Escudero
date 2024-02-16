@@ -12,7 +12,7 @@ import NavBar from "../NavBar/NavBar.jsx";
 //IMAGENES
 import img from "../../assets/images/logotipos/LOGO BLANCO.png";
 
-const Header = (props) => {
+const Header = () => {
   return (
     <div className="Header">
       <Link to="/"><img className="logotype-princ" src={img} alt="Logo Principal Insidia" /></Link>

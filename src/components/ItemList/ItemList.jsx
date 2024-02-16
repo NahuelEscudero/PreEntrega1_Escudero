@@ -5,11 +5,9 @@ import "./ItemList.css"
 const ItemList = ( {items} ) => {
   return (
     <div className="cards-container">
-      {items.map(item => (
-        <div key={item.id}>
-          <Item product={item} />
-        </div>
-      ))}
+      {items.map(item => {
+        return <Item product={item} key={item.id}/>;
+      })}
     </div>
   );
 };

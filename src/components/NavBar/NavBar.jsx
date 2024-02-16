@@ -11,9 +11,9 @@ const NavBar = () => {
   return (
     <nav className="NavBar">
         <ul>
-          <Link to="/coleccion" className="navbar-links">COLECCION</Link>
-          <Link to="/nosotros" className="navbar-links">NOSOTROS</Link>
-          <Link to="/locales" className="navbar-links">LOCALES</Link>
+          <Link to="/category-page/medias" className="navbar-links">MEDIAS</Link>
+          <Link to="/category-page/bermudas" className="navbar-links">BERMUDAS</Link>
+          <Link to="/category-page/remeras" className="navbar-links">REMERAS</Link>
           <li>
             <CartWidget />
           </li>

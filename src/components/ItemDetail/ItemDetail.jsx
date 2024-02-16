@@ -7,16 +7,16 @@ import { CardActionArea } from '@mui/material';
 
 const ItemDetail = ( {product} ) => {
   const { nombre, imagen, precio } = product;
-  const valorDolar = 1025;
+  const valorDolar = 1200;
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 400 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="440"
           image={imagen}
-          alt={`Remera: ${nombre}`}
+          alt={`${nombre}`}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

@@ -1,27 +1,21 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+//ESTILOS
+import "./ItemDetailContainer.css"
+
 //COMPONENTES
 import ItemDetail from "../ItemDetail/ItemDetail.jsx";
 
-//OBTENGO PRODUCTOS
-import products from "../../../productos.json";
-
 //HOOKS
-import { useState, useEffect } from "react";
+import useProduct from "../../../asyncMockProduct.jsx";
 
-const ItemDetailContainer = ( {ident} ) => {
-  const [ prod, setProd ] = useState({});
-  
-  useEffect(() => {
-    setProd(products.find((item) => {
-      return item.id === ident;
-    }));
-  }, []); 
+const ItemDetailContainer = () => {
+  const prod = useProduct();
   
   return (
-    <div>
-      <ItemDetail product={prod} />
-    </div>
+    <div className="detail-product-container">
+      {prod && <ItemDetail product={prod} />}
+    </div>    
   );
 }
 
