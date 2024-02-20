@@ -1,3 +1,8 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
 .CartWidget {
     display: flex;
 }
@@ -8,6 +13,8 @@
     cursor: pointer;
 }
 
-.button-carrito span {
-    font-weight: 700;
+.cart-length {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #FFFFFF;
 }
