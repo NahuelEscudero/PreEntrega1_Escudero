@@ -12,7 +12,6 @@ import FinishedBuy from "../FinishedBuy/FinishedBuy.jsx";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig.js";
 
-
 const initialState = {
   name: "",
   lastName: "",
@@ -22,7 +21,7 @@ const initialState = {
 const FormBuy = () => {
   const [values, setValues] = useState(initialState);
   const [purchaseID, setPurchaseID] = useState(null);
-
+  const [onClick, setOnClick] = useState(false);
 
   const onChange = (e) => {
     const { value, name } = e.target;
@@ -33,50 +32,54 @@ const FormBuy = () => {
     e.preventDefault();
 
     const docRef = await addDoc(collection(db, "purchasesCollection"), {
-      values
+      values,
     });
 
     setPurchaseID(docRef.id);
+    setOnClick(true);
   };
 
   return (
     <>
-      <div className="cont-form">
-        <h2 className="form-title">Continua tu compra</h2>
-        <form className="form" onSubmit={onSubmit}>
-          <TextField
-            id="outlined-basic"
-            label="Nombre"
-            name="name"
-            variant="outlined"
-            value={values.name}
-            onChange={onChange}
-            required
-          />
-          <TextField
-            id="outlined-basic"
-            label="Apellido"
-            name="lastName"
-            variant="outlined"
-            value={values.lastName}
-            onChange={onChange}
-            required
-          />
-          <TextField
-            id="outlined-basic"
-            label="Direccion"
-            name="direction"
-            variant="outlined"
-            value={values.direction}
-            onChange={onChange}
-            required
-          />
-          <Button type="submit" variant="contained">
-            Finalizar Compra
-          </Button>
-          <FinishedBuy purchaseID={purchaseID} person={values}/>
-        </form>
-      </div>
+      {onClick ? (
+        <FinishedBuy purchaseID={purchaseID} person={values} button={onClick} />
+      ) : (
+        <div className="cont-form">
+          <h2 className="form-title">Continua tu compra</h2>
+          <form className="form" onSubmit={onSubmit}>
+            <TextField
+              id="outlined-basic"
+              label="Nombre"
+              name="name"
+              variant="outlined"
+              value={values.name}
+              onChange={onChange}
+              required
+            />
+            <TextField
+              id="outlined-basic"
+              label="Apellido"
+              name="lastName"
+              variant="outlined"
+              value={values.lastName}
+              onChange={onChange}
+              required
+            />
+            <TextField
+              id="outlined-basic"
+              label="Direccion"
+              name="direction"
+              variant="outlined"
+              value={values.direction}
+              onChange={onChange}
+              required
+            />
+            <Button type="submit" variant="contained">
+              Finalizar Compra
+            </Button>
+          </form>
+        </div>
+      )}
     </>
   );
 };

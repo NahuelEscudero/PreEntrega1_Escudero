@@ -1,0 +1,23 @@
+.cont-datafinished {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.datafinished-title {
+    color: #000000;
+}
+
+.datafinished {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.datafinished-text {
+    font-size: 1rem;
+}
+
+.datafinished-content {
+    font-size: 1rem;
+}

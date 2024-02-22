@@ -6,39 +6,33 @@ import "./FinishedBuy.css";
 import { CartContext } from "../../context/CartContext";
 
 //HOOKS
-import { useContext } from "react";
+import { useState, useContext } from "react";
 
 //COMPONENTES
 import ItemFinishedBuy from "../ItemFinishBuy/ItemFinishedBuy";
 
-const FinishedBuy = ({ purchaseID, person }) => {
+const FinishedBuy = ({ purchaseID, person, button }) => {
   const { prods } = useContext(CartContext);
   const { name, lastName, direction } = person;
   //console.log(prods);
 
-  return (
+  return button ? (
     <div className="cont-datafinished">
+      <h2 className="datafinished-title">¡SU COMPRA SE REALIZÓ CON ÉXITO!</h2>
       <div className="datafinished">
-        <div className="datafinished">
-          <h5 className="datafinished-text">Nombre y Apellido:</h5>
-          <p className="datafinished-content">{name + " " + lastName}</p>
-        </div>
-        <div className="datafinished">
-          <h5 className="datafinished-text">Su pedido se enviará a:</h5>
-          <p className="datafinished-content">{direction}</p>
-        </div>
-        <div className="datafinished">
-          <h5 className="datafinished-text">Numero de transacción</h5>
-          <p className="datafinished-content">{purchaseID}</p>
-        </div>
+        <p className="datafinished-text">Nombre y Apellido:</p>
+        <h5 className="datafinished-content">{name + " " + lastName}</h5>
       </div>
-      <div className="product-datafinished">
-        { prods.map((prod) => {
-          <ItemFinishedBuy product={prod} />
-        }) }; 
+      <div className="datafinished">
+        <p className="datafinished-text">Su pedido se enviará a:</p>
+        <h5 className="datafinished-content">{direction}</h5>
+      </div>
+      <div className="datafinished">
+        <p className="datafinished-text">Numero de transacción</p>
+        <h5 className="datafinished-content">{purchaseID}</h5>
       </div>
     </div>
-  );
+  ) : null;
 };
 
 export default FinishedBuy;
