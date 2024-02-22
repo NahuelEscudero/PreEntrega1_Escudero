@@ -18,7 +18,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        await getProducts();
+        await getProducts("productos");
         setTimeout(() => {
           setIsLoading(false);
         }, 1000);

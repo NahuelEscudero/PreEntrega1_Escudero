@@ -18,7 +18,7 @@ const ItemListContainer = ({ saludo }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productsData = await getProducts();
+        const productsData = await getProducts("productos");
         setProducts(productsData);
       } catch (error) {
         console.error("Error fetching products:", error);

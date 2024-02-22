@@ -1,0 +1,13 @@
+.product-buyed {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.product-buyed__img {
+    width: 100%;
+}
+
+.product-buyed__name {
+    width: 100%;
+}

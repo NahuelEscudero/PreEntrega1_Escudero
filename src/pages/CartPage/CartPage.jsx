@@ -9,10 +9,11 @@ import FormBuy from "../../components/FormBuy/FormBuy.jsx";
 import { CartContext  } from "../../context/CartContext";
 
 //HOOKS
-import { useContext } from "react"; 
+import { useContext, useState } from "react"; 
 
 const CartPage = () => {
   const { prods, totalCartPrice } = useContext(CartContext);
+  const [ verDatos, setVerDatos ] = useState(false);
 
   return (
     <div className="container-products">
@@ -39,8 +40,7 @@ const CartPage = () => {
         </div>
       ) : null}
 
-      {/*prods.length > 0 ? <FormBuy /> : null*/}
-      <FormBuy />
+      {prods.length > 0 ? <FormBuy /> : null}
     </div>
   );
 };

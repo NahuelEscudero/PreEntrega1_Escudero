@@ -31,7 +31,6 @@ export const ProductsCartProvider = ({ children }) => {
     }
     setTotalCartPrice(product.precioTotal + totalCartPrice);
   };
-  console.log(totalCartPrice);
 
   const removeProd = (productId) => {
     const existingProductIndex = prods.findIndex(

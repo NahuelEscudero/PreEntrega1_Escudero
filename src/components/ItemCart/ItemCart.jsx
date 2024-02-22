@@ -18,7 +18,7 @@ const ItemCart = ({ product }) => {
   //Valor actualizado del precio
   const [nuevoPrecioTotal, setNuevoPrecioTotal] = useState(precioTotal);
   //Productos del carrito
-  const { prods, removeProd } = useContext(CartContext);
+  const { removeProd } = useContext(CartContext);
   //Valor del dolar
   const valorDolar = 1200;
 

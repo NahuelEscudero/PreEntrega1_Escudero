@@ -1,15 +1,15 @@
 import { db } from "./src/firebase/firebaseConfig";
 import { collection, query, getDocs} from "firebase/firestore";
 
-const getProducts = async () => {
-  const products = [];
-  const q = query(collection(db, "productos"));
+const getProducts = async (database) => {
+  const data = [];
+  const q = query(collection(db, database));
   const querySnapshot = await getDocs(q);
   querySnapshot.forEach((doc) => {
-    products.push({ ...doc.data(), id: doc.id });
+    data.push({ ...doc.data(), id: doc.id });
   });
 
-  return products;
+  return data;
 };
 
 export default getProducts;
